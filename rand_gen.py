@@ -9,7 +9,7 @@ EASY = "abcdefghijklmnopqrstuvwxyz"
 MED = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 STRONG = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#@$%&*()+,-./:;<=>?[]\^_|"
 
-def generate(len, type):
+def generate_password(len, type):
     password = ""
     if type == 0:
         for i in range(len):
@@ -27,7 +27,7 @@ def generate(len, type):
         return password
 
 def onGeneratePress():
-    generated_password = generate(combo_var.get(), radio_var.get())
+    generated_password = generate_password(combo_var.get(), radio_var.get())
     pyperclip.copy(generated_password)
     messagebox.showinfo("Generated Password", "Your secret key is "+generated_password+" It has been copied to clipboard.")
 
